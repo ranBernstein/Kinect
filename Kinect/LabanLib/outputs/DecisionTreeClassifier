@@ -1,0 +1,9 @@
+baseClf DecisionTreeClassifier(compute_importances=None, criterion='gini',
+            max_depth=None, max_features=None, max_leaf_nodes=None,
+            min_density=None, min_samples_leaf=1, min_samples_split=2,
+            random_state=None, splitter='best')
+n_iter 5
+without Laban 0.685714285714
+[0.75, 0.6607142857142857, 0.6785714285714286, 0.6428571428571429, 0.6964285714285714]
+with Laban 0.767857142857
+[0.7857142857142857, 0.6964285714285714, 0.7678571428571429, 0.8214285714285714, 0.7678571428571429]
