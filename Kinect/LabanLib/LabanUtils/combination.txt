@@ -44,7 +44,7 @@ Retreat,  Bind  f7
 Retreat,  Twist+Back  f8
 Condense+Enclose,  Bind  f9
 Condense+Enclose,   Twist+Back   f10
-Bind,  Twist+Back  f11
+Bind,  Twist+Back,  f11
 
 Jump,  Rhythmicity,  Spread  h1
 Jump,  Rhythmicity,  Free+Light  h2
@@ -56,6 +56,7 @@ Jump,  Spread,  Rotation  h7
 Jump,  Free+Light,  Up+Rise  h8
 Jump,  Free+Light,  Rotation  h9
 Jump,  Up+Rise,  Rotation  h10
+Jump,  Up+Rise,  Free+Light, Spread h22
 Rhythmicity, Spread,  Free+Light  h11
 Rhythmicity,  Free+Light,  Up+Rise    h12
 Rhythmicity,  Free+Light,  Rotation  h13

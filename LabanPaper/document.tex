@@ -561,7 +561,10 @@ focus on the qualities that we found easier to recognize. The evaluation is show
 \end{figure}
 
 \section{Conclusion}
-We developed a method for recognizing Laban qualities using the Microsoft Kinect sensor. Our method obtained a recall and precision of about 60\% over the qualities. The larger movements, such as \textit{jump}, \textit{spread}, and \textit{sink}, are easier to quantify, and hence  easier to recognize (precision and recall of 60-90\%). The more subtle qualities, such as \textit{strong} and \textit{passive}, are harder for us to quantify in kinematic measurements, which causes a degradation in the performance (precision and recall of 40-60\%). 
+We developed a method for recognizing Laban qualities using the Microsoft Kinect sensor. 
+Our method obtained a recall and precision of about 60\% over the qualities. 
+The larger movements, such as \textit{jump}, \textit{spread}, and \textit{sink}, 
+are easier to quantify, and hence  easier to recognize (precision and recall of 60-90\%). The more subtle qualities, such as \textit{strong} and \textit{passive}, are harder for us to quantify in kinematic measurements, which causes a degradation in the performance (precision and recall of 40-60\%). 
 \\\\The improvement of the F1 score from a single task learning setting (0.56) to a multitask setting (0.6) demonstrates the synergy of a shared model for several correlated tasks. The mild degradation of the F1 score from a seen CMA (0.6) to an unseen (0.57) shows a very good generalization ability of our linear classification model. This ability derives from our focus on the MEN regularization terms, which resulted in our model being not too rich, even sparse, and thus not over-fitted. 
 \\\\Overall we believe that we succeeded in capturing the essence of most of the qualities, using a cheap (\$100) and widely available sensor.
 We believe that our work will provide the foundation and inspiration that will make the LMA method

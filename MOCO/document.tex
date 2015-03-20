@@ -1,4 +1,4 @@
-\documentclass[11pt,twocolumn,varwidth=true,a4paper,fleqn]{article}
+\documentclass[11pt,twocolumn,varwidth=true,a4paper,fleqn]{sigchi}
 \usepackage{fullpage}
 \usepackage{url}
 \usepackage[margin=1.1in]{geometry}
@@ -24,7 +24,6 @@
 \affil[3]{School of Theatre \& Music, The University of Illinois at Chicago}
 \affil[4]{School of Dance, George Mason University}
 
-\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 \begin{document}
 \nocite{*}
 
@@ -40,8 +39,9 @@ as it captures their qualitative aspects in addition to the quantitative.
 Thus, in recent years, LMA is increasingly becoming the preferred method for movement analysis.
 In this study we examine a multitask Learning approach for recognizing Laban qualities from a
 markerless Motion Capture (MOCAP) camera --- Microsoft's Kinect. This approach
-has obtained an improvment in recall and precision rate of about 60\%  --- 5\%
-more than single learning that appears in earlier work. }
+has obtained an improvement  in recall and precision rate of about 60\%  --- 4\%
+more than single learning that appears in earlier work. In addition, an
+evaluation on a never seen CMAs and a non CMAs were made.}
 \end{abstract}
 
 \section{Introduction}
@@ -57,8 +57,8 @@ versus a heavy, slow, indirect and uninterrupted manner.
 The entire LMA hierarchy is shown in figure \ref{labanTree}.
 \begin{figure*}[ht]
 \centering
+\caption{Main axes of LMA. Taken from  }\cite{labanTree}
 \includegraphics[width=\textwidth]{laban.png}
-\caption{Main axes of LMA. Taken from \cite{labanTree}}
 \label{labanTree}
 \end{figure*}
 
@@ -133,7 +133,8 @@ Two main datasets were collected:
 \begin{itemize}
   \item
   CMA dataset - includes 6 CMAs performing in about
-  80 clips each (a total of 550 clips). Every clip is about 3 seconds long, and the CMAs executed combinations of the 18 qualities.
+  80 clips each (a total of 550 clips). Every clip is about 3 seconds long, 
+  and the CMAs executed combinations of the 18 qualities.
   To achieve uniform distribution of the Laban qualities over the dataset, in every
   clip the CMA was asked to perform actions that include several specific qualities,
   and nothing but them.
@@ -146,16 +147,24 @@ Two main datasets were collected:
 \end{figure}
 
 \item
-Non-CMA dataset - includes 2 subjects without a background in movement
-analysis, performing 30 clips each. Every clip is also about 3 seconds long,
-and the subject was asked to perform one out of several
-tasks.
+Non-CMA dataset - includes 5 subjects that are not CMAs, performing 30 clips each. 
+Every clip is also about 3 seconds long, and the subject was asked to perform one out 
+of several every day tasks.
 \end{itemize}
 \subsection{Clip Labeling}
 To achieve a ground truth labeling for the two datasets, every clip was tagged by
 a committee of 2 CMAs who determined which Laban qualities appear in the
 clip. The use of a committee decision instead of the subjective opinion of one
 CMA decreases the labeling noise and the decision is considered as ground truth.
+\subsection{Feature Extraction}
+The feature extraction is adopted from an earlier work \cite{ran}.
+Due to the unequal length of clips, all the extracted features are in whole clip 
+granularity. We extracted two groups of features, the first is a relatively
+small, and contains about 100 features that each one of them is designed for a
+specific quality. The second group contains about 6000
+features, and exploits the rich data that is provided by Kinect, by extracting from every joint in the skeleton, the
+angular velocity, acceleration, and jerk. For every joint/metric pair, the mean,
+variance, skew, and kurtosis were extracted. 
 
 \subsection{Multitask Learning}
 The multitask learning framework \cite{caruana1997multitask},  tries to learn multiple tasks simultaneously even
@@ -253,8 +262,9 @@ deviation over the qualities is shown in the last row of the table.}
 \subsection{Evaluation on an Unseen CMA}
 In this experiment the test set was taken from a CMA who did not appear in the train set.
 As shown in Figure \ref{domainAdaptationBaseLine}, performance degrades on the unseen CMA from 0.6 to 0.57.
-We blame the degradation on the large variability between clips from one CMA to another. Every CMA performed different gestures, in different
-postures (some sitting and some standing) and in different contexts (some were dancing while some were acting).
+We blame the degradation on the large variability between clips from one CMA to another. 
+Every CMA performed different gestures, in different postures (some sitting and some standing) 
+and in different contexts (some were dancing while some were acting).
 
 \begin{figure}[!h]
 \centering
@@ -320,23 +330,12 @@ perform several tasks.}
 \end{figure}
 
 \section{Conclusion}
-We developed a method for recognizing Laban qualities using the Microsoft Kinect sensor.
-Our method obtained a recall and precision of about 60\% over the qualities.
-The larger movements, such as \textit{jump}, \textit{spread}, and \textit{sink},
-are easier to quantify, and hence  easier to recognize (precision and recall of 60-90\%).
-The more subtle qualities, such as \textit{strong} and \textit{passive},
-are harder for us to quantify in kinematic measurements, which causes a degradation in
-the performance (precision and recall of 40-60\%).
 \\\\The improvement of the F1 score from a single task learning setting (0.56) to a multitask
 setting (0.6) demonstrates the synergy of a shared model for several correlated tasks.
 The mild degradation of the F1 score from a seen CMA (0.6) to an unseen (0.57) shows
 a very good generalization ability of our linear classification model.
 This ability derives from our focus on the MEN regularization terms, which resulted in our
 model being not too rich, even sparse, and thus not over-fitted.
-\\\\Overall we believe that we succeeded in capturing the essence of most of the qualities,
-using a cheap (\$100) and widely available sensor.
-We believe that our work will provide the foundation and inspiration that will make the LMA method
-applicable in many more methodologies and processes.
 \bibliographystyle{unsrt}
 \bibliography{bib}
 
