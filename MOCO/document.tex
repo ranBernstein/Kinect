@@ -1,33 +1,16 @@
-\documentclass[11pt,twocolumn,varwidth=true,a4paper,fleqn]{sigchi}
-%\usepackage{fullpage}
-%\usepackage{url}
-%\usepackage[margin=1.1in]{geometry}
+%\documentclass[10pt,twocolumn,varwidth=true,a4paper,fleqn]{sig-alternate-05-2015}
+%\documentclass{sig-alternate}
+\documentclass{sigchi}
+
 \usepackage{graphicx}
 \usepackage{csvsimple}
-%\usepackage{varwidth}
 \usepackage{array}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{pgfplotstable}
-%\usepackage[T1]{fontenc}
-%\usepackage[compact]{titlesec}
-\usepackage{authblk}
-
+%\usepackage{authblk}
 
 \begin{document}
-\nocite{*}
-\title{Laban Movement Analysis using Kinect}
-
-\author[1]{Bernstein Ran}
-\author[2]{Shafir Tal}
-\author[3]{Tsachor Rachelle}
-\author[4]{Studd Karen}
-\author[1]{Schuster Assaf}
-
-\affil[1]{Department of Computer Science, Technion I.I.T, Haifa, Israel}
-\affil[2]{The Graduate School of Creative Arts Therapies, University of Haifa}
-\affil[3]{School of Theatre \& Music, The University of Illinois at Chicago}
-\affil[4]{School of Dance, George Mason University}
 
 \newcommand*{\TitleFont}{%
       \usefont{\encodingdefault}{\rmdefault}{b}{n}%
@@ -36,8 +19,55 @@
       
 \title{\TitleFont{Multitask Learning for Laban Movement Analysis}}
 \date{}
-\maketitle
 
+\numberofauthors{5}
+
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Bernstein Ran\\
+       \affaddr{Department of Computer Science}\\
+       \affaddr{Technion I.I.T}\\
+       \affaddr{Haifa, Israel}\\
+       \email{}
+% 2nd. author
+\alignauthor
+Shafir Tal\\
+       \affaddr{The Graduate School of Creative Arts Therapies}\\
+       \affaddr{University of Haifa}\\
+       \email{}
+% 3rd. author
+\alignauthor Tsachor Rachelle\\
+       \affaddr{School of Theatre \& Music}\\
+       \affaddr{The University of Illinois at Chicago}\\
+       \email{}
+\and  % use '\and' if you need 'another row' of author names
+% 4th. author
+\alignauthor Studd Karen\\
+       \affaddr{School of Dance}\\
+       \affaddr{George Mason University}\\
+       \email{}
+% 5th. author
+\alignauthor Schuster Assaf\\
+       \affaddr{Department of Computer Science}\\
+       \affaddr{Technion I.I.T}\\
+       \affaddr{Haifa, Israel}\\
+       \email{}
+}
+
+
+
+\maketitle
 \begin{abstract}
 This paper presents the results of a multitask learning method for 
 recognition of Laban Movement Analysis (LMA) qualities from a markerless motion 
@@ -56,9 +86,7 @@ Learning (ML) algorithms.  This approach obtained an improvement in recall and p
 non trained people moving general actions.   Results show improved handling of noisy sensory data with an in-home setup, a method for automatic recognition of markerless movement in different situations, postures and tasks, and moderate improvements in quantification of subtle qualities for which a well defined quantification had previously not been found.
 \end{abstract}
 
-\begin{ke}
-Laban Movement Analysis, Kinect, Machine Learning.
-\end{IEEEkeywords}
+\keywords{Laban Movement Analysis, Machine Learning, Multitask Learning, Kinect}
 
 \section{Introduction}
 
@@ -83,7 +111,9 @@ The entire LMA hierarchy is shown in figure \ref{labanTree}.
 \begin{figure*}[ht]
 \centering
 \caption{Main axes of LMA. Taken from  }\cite{labanTree}
-\includegraphics[width=13cm,height=6cm]{laban.png}
+\includegraphics[width=\textwidth]{laban.png}
+%\includegraphics[width=15cm,height=10cm]{laban.png}
+
 \label{labanTree}
 \end{figure*}
 
@@ -101,8 +131,7 @@ help them convey through their body language
 the emotional message they want to
 communicate (e.g., politicians and public
 speakers or actors in training) \cite{nguyen2012online}; as a type of biofeedback for motor skills learning for interpersonal communication,
-coordination and self-regulation or recog
-nition of people's emotions during interactive games such as those
+coordination and self-regulation or recognition of people's emotions during interactive games such as those
 played using the Xbox \cite{Zacharatos}.
 \mbox{}\\
 \par
@@ -116,7 +145,7 @@ Lourens et al. \cite{lourens2010communicating} used video data and Samadani et a
 \cite{samadani2013laban} used a high quality MOCAP camera, but both of them
 analyzed only hand gestures, rather than whole body movement, which is important for detecting the expression of emotions. A third line of inquiry used Kinect as the main sensor for skeletal information. Gabel et al. \cite{gabel2012full} used Kinect for gait analysis. 
 The work of Zacharatos et al. [26] focused on two LMA Efforts (Space Effort and Time Effort) for emotion recognition using Kinect. His feature extraction method was influenced by LMA principles, but he did not attempt to recognize the qualities themselves, and the detection of more than 2 LMA elements are needed to identify expression.
-\cite{kim} did attempt to do so but not on a real dataset and their work did not include a performance evaluation. Our work continues Bernstein's et al. work \cite{ran}, but with multitask instead of single-task learning and with analysis on people that are not are not trained in LMA.
+\cite{kim} did attempt to do so but not on a real dataset and their work did not include a performance evaluation. Our work continues Bernstein's et al. work \cite{ran}, but with multitask instead of single-task learning and with analysis on people that are not trained in LMA.
 \mbox{}\\
 \par
 The multi-task learning approach was chosen to address the limitations of the studies cited above. Our goal is to create a method for automated identification of Laban qualities that
@@ -297,7 +326,7 @@ entropy of a dataset.
 \subsection{Multilabel Classification using Multitask Learning}
  
 
-Multi-task learning was chosen as particularly suited to address challenge 3:  Developing a system capable of identifying movement in different scenarios, different postures by people of different Movement backgrounds. Multilabel learning is suited to this task because it deals with problems where each instance is associated with multiple labels simultaneously, where the number of labels is not fixed from instance to instance. 
+Multi-task learning was chosen as particularly suited to address challenge 3:  Developing a system capable of identifying movement in different scenarios, different postures by people of different movement backgrounds. Multilabel learning is suited to this task because it deals with problems where each instance is associated with multiple labels simultaneously, where the number of labels is not fixed from instance to instance. 
 
 The task of this learning paradigm is to predict
 the label (Laban quality) set for each unseen instance (skeletal recording), 
