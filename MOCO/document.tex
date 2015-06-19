@@ -29,8 +29,12 @@
 \affil[3]{School of Theatre \& Music, The University of Illinois at Chicago}
 \affil[4]{School of Dance, George Mason University}
 
-
-\title{Multitask Learning for Laban Movement Analysis}
+\newcommand*{\TitleFont}{%
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+      \fontsize{16}{20}%
+      \selectfont}
+      
+\title{\TitleFont{Multitask Learning for Laban Movement Analysis}}
 \date{}
 \maketitle
 
@@ -51,6 +55,10 @@ output of Microsoft's Kinect V2 sensor and on video.  These clips were tagged by
 Learning (ML) algorithms.  This approach obtained an improvement in recall and precision rate of about 60\%--- 4\% more than single-task machine learning previous approach by Bertstein et al. on single-task learning,  was validated by analysis of
 non trained people moving general actions.   Results show improved handling of noisy sensory data with an in-home setup, a method for automatic recognition of markerless movement in different situations, postures and tasks, and moderate improvements in quantification of subtle qualities for which a well defined quantification had previously not been found.
 \end{abstract}
+
+\begin{ke}
+Laban Movement Analysis, Kinect, Machine Learning.
+\end{IEEEkeywords}
 
 \section{Introduction}
 
@@ -257,13 +265,15 @@ and the angles between a direction to the next one is calculated with the inner 
 
 \subsubsection{Jump}
 This distinction was quantified by the maximal (over the clip) difference in the position along the Y axis of the lower between Ankle Right (AR) and Ankle Left (AL). 
-\\Let $S(t)$ be the time series of the minimum, between the ankles
+\\Let $S(t)$ be the time series of the minimum between the ankles.
+If $P_{j}^{Y}(t)$ is the position along Y axis of joint j in time t,
 \begin{equation*}
-S(t) = min\{\vec{P}_{AL}(t), \vec{P}_{AR}(t)\},
+S(t) = min\{P_{j}^{Y}(t), P_{j}^{Y}(t)\},
 \end{equation*}
 \begin{equation*}
-F_{Jump} = max_{t}\{S(t)\} - min\{S(t)\}.
+F_{Jump} = max_{t}\{S(t)\} - min_t\{S(t)\}.
 \end{equation*}
+i.e., the highest point of the bottom of the skeleton minus the lowest point of the bottom of the skeleton.
 
 \subsubsection{Statistical glance on the features}
 Examples of qualities and their most significant feature are given in 
