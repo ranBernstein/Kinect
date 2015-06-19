@@ -12,7 +12,9 @@
 
 \begin{document}
 
-\newcommand*{\TitleFont}{%
+\nocite{*}
+
+ \newcommand*{\TitleFont}{%
       \usefont{\encodingdefault}{\rmdefault}{b}{n}%
       \fontsize{16}{20}%
       \selectfont}
@@ -68,6 +70,7 @@ Shafir Tal\\
 
 
 \maketitle
+
 \begin{abstract}
 This paper presents the results of a multitask learning method for 
 recognition of Laban Movement Analysis (LMA) qualities from a markerless motion 
@@ -123,7 +126,10 @@ There are numerous applications for computerized identification of
 the possible qualities that combine to characterize each human
 movement. Examples include the generation and control of specific
 expressive movements of avatars, virtual characters, or robots in
-mixed reality scenarios \cite{Masuda}; understanding of personality traits during a job interview \cite{levy2003use}; severity assessment or revealing of early stages of various disorders such as Alzheimer's, autism, Parkinson's dis-ease \cite{camurri2003application}, or schizophrenia, based on analysis
+mixed reality scenarios \cite{Masuda}; understanding of personality 
+traits during a job interview \cite{levy2003use}; 
+severity assessment or revealing of early stages of various disorders 
+such as Alzheimer's, autism, Parkinson's disease \cite{camurri2003application}, or schizophrenia, based on analysis
 of a person's motor behavior. Automated emotion recognition from
 movement is another important application which may have a
 variety of uses such as online feedback to presenters to
@@ -144,8 +150,9 @@ The second line of work focused on LMA and emotions, but not using Kinect.
 Lourens et al. \cite{lourens2010communicating} used video data and Samadani et al.
 \cite{samadani2013laban} used a high quality MOCAP camera, but both of them
 analyzed only hand gestures, rather than whole body movement, which is important for detecting the expression of emotions. A third line of inquiry used Kinect as the main sensor for skeletal information. Gabel et al. \cite{gabel2012full} used Kinect for gait analysis. 
-The work of Zacharatos et al. [26] focused on two LMA Efforts (Space Effort and Time Effort) for emotion recognition using Kinect. His feature extraction method was influenced by LMA principles, but he did not attempt to recognize the qualities themselves, and the detection of more than 2 LMA elements are needed to identify expression.
-\cite{kim} did attempt to do so but not on a real dataset and their work did not include a performance evaluation. Our work continues Bernstein's et al. work \cite{ran}, but with multitask instead of single-task learning and with analysis on people that are not trained in LMA.
+The work of Zacharatos et al. \cite{Zacharatos} focused on two LMA Efforts (Space Effort and Time Effort) for emotion recognition using Kinect. His feature extraction method was influenced by LMA principles, but he did not attempt to recognize the qualities themselves, and the detection of more than 2 LMA elements are needed to identify expression.
+Kim et al. \cite{kim} did attempt to do so but not on a real dataset and their
+work did not include a performance evaluation. Our work continues Bernstein's et al. work \cite{ran}, but with multitask instead of single-task learning and with analysis on people that are not trained in LMA.
 \mbox{}\\
 \par
 The multi-task learning approach was chosen to address the limitations of the studies cited above. Our goal is to create a method for automated identification of Laban qualities that
@@ -512,20 +519,43 @@ perform several tasks.}
 \end{figure}
 
 \section{Discussion}
-The authors of this study generated video clips of 18 LMA elements found to be significant in the expression of emotion, in combinations found together in the expression of particular emotions in other studies[23].  The unique data set generated of these particular LMA elements focused our ML priorities to automatically identify the specific LMA elements most helpful to therapeutic, communication and gaming applications.   Using CMA's as expert movers for these data sets and filtering the training set a second time with trained CMA observers boosted the accuracy of the training set.   Filtering the test set in this way by tagging all clips (rather than the sample tagging within the scope of this study) may further boost  accuracy when tested in non-structured settings.      
-
-An advantage of the language of LMA is that it can be more easily understood as language  than metric descriptions, describes in words that can be used for coaching, and facilitates first-person embodied experience of movement. Thus automatic recognition that uses this language can be readily applied in scientific, artistic, and humanistic practices.
-
-Although not within the scope of this paper, the specific results of the feature extraction itself may also be valuable in better understanding the kinesiologic mechanisms by which qualitative movement is recorded and perhaps produced in the body.   The precision and recall themselves may illuminate nuances in movement vectors, relationships among body parts, and how these change over time that open new inquiry into each LMA element itself. 
-
-While automatic recognition of Body, Space and somewhat for Shape is easier to achieve than recognition for Effort, the recall and F1 score for some Efforts (notably the combination of Free and Light) are quite high.  The Efforts which we're not yet identifying clearly (such as Strong, or Direct) more interdisciplinary led exploration may yield new analytical hypotheses for analysis from the same data set --- for example,  Identification of Direct might be improved by looking at vectors for the distal limb parts compared to vectors for the mid-limb and proximal parts. 
-
-We discovered advantages for multi-task learning in identifying some elements, and advantages for single task for others. STL had advantages for recall, and multi-task for precision. This indicates a future development of these methods might combine each as a filter to boost accuracy further still.
+The authors of this study generated video clips of 18 LMA elements 
+found to be significant in the expression of emotion, in combinations 
+found together in the expression of particular emotions in other studies
+\cite{Tsachor}.
+The unique data set generated of these particular LMA elements focused our ML 
+priorities to automatically identify the specific LMA elements most helpful to therapeutic, 
+communication and gaming applications.   Using CMA's as expert movers for these data sets 
+and filtering the training set a second time with trained CMA observers boosted the accuracy of the 
+training set.   Filtering the test set in this way by tagging all clips (rather than the sample
+tagging within the scope of this study) may further boost  accuracy when tested in non-structured settings.
+An advantage of the language of LMA is that it can be more easily understood as language  than metric 
+descriptions, describes in words that can be used for coaching, and facilitates first-person 
+embodied experience of movement. Thus automatic recognition that uses this language can be readily 
+applied in scientific, artistic, and humanistic practices.
+Although not within the scope of this paper, the specific results of the feature extraction 
+itself may also be valuable in better understanding the kinesiologic mechanisms by which qualitative 
+movement is recorded and perhaps produced in the body.   
+The precision and recall themselves may illuminate nuances in movement vectors, relationships among 
+body parts, and how these change over time that open new inquiry into each LMA element itself. 
+While automatic recognition of Body, Space and somewhat for Shape is easier to achieve than recognition
+ for Effort, the recall and F1 score for some Efforts (notably the combination of Free and Light) 
+ are quite high.  For the Efforts which we're not yet identifying clearly (such
+ as Strong, or Direct) more interdisciplinary led exploration may yield new analytical hypotheses for analysis from the 
+ same data set --- for example, identification of Direct might be improved
+ by looking at vectors for the distal limb parts compared to vectors for the mid-limb and proximal parts. 
+We discovered advantages for multi-task learning in identifying some elements, and advantages for 
+single task for others. STL had advantages for recall, and multi-task for precision. This indicates 
+a future development of these methods might combine each as a filter to boost accuracy further still.
 
 \section{Conclusion}
+
 The improvement of the F1 score from a single task learning setting (0.56) to a multitask setting (0.6) demonstrates the synergy of a shared model for several correlated tasks. 
 The method works better on qualities that appear with larger changes in \textit{Space} that supports their recognition. 
-Although this fact indicates that there still much more to be done to achieve a deep capture of all the qualities, the MTL approach might facilitate the ML to take advantage of LMA theories of the affinity of space, shape, effort and body to mine the data for new discoveries about the kinematic features of effort.  
+Although this fact indicates that there still much more to be done to achieve a
+deep capture of all the qualities, the MTL approach might facilitate the ML to
+take advantage of LMA theories of the affinity of Space, Shape, Effort and body
+to mine the data for new discoveries about the kinematic features of effort.
 The high performance on free and light demonstrated that this method can identify some Efforts and shows potential that with further refinement it maybe valuable for recognition of the other Efforts. 
 We defined  three challenges in the introduction: the first, quantifying the subtle qualities --- 
 the MTL approach produced modest improvement in that area.
