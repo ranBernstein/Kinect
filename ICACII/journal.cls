@@ -4670,7 +4670,7 @@ Use \@IEEEbackslash #2 instead.}}
 % provide for legacy environments
 \def\biography{\@IEEElegacywarn{biography}{IEEEbiography}\IEEEbiography}
 \def\biographynophoto{\@IEEElegacywarn{biographynophoto}{IEEEbiographynophoto}\IEEEbiographynophoto}
-\def\keywords{\@IEEElegacywarn{keywords}{IEEEkeywords}\IEEEkeywords}
+\def\keywords{\@IEEElegacywarn{\textbf{keywords}}{IEEEkeywords}\IEEEkeywords}
 \def\endbiography{\endIEEEbiography}
 \def\endbiographynophoto{\endIEEEbiographynophoto}
 \def\endkeywords{\endIEEEkeywords}

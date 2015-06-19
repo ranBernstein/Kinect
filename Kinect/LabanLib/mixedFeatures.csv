@@ -1,91 +1,181 @@
-Quality, Feature Name, Operator, Information Gain, p-value
-Advance, Position of SpineBase_Zafter LPF  , min, 0.08, 2.2e-13
-Advance, Position of SpineBase_Z , min, 0.09, 1.5e-09
-Advance, Position of Head_Z , mean, 0.05, 0.09037
-Advance, Position of Head_Zafter LPF  , mean, 0.05, 0.03263
-Advance, AdvanceAndRetreate , max, 0.08, 9.1e-16
-ArmsToUpperBody, Directness  , mean abs, 0.08, 8.2e-16
-ArmsToUpperBody, Directness  , mean abs, 0.08, 3.6e-23
-ArmsToUpperBody, Directness  , mean square, 0.09, 3.8e-24
-ArmsToUpperBody, HandTipLeft angle after LPF  , mean square, 0.09, 6.2e-20
-ArmsToUpperBody, Position of ElbowRight_Z , max, 0.1, 1.4e-18
-Bind, SpreadindAndClosing , mean abs, 0.09, 8.8e-13
-Bind, Jump , mean abs, 0.09, 8.8e-13
-Bind, Jump , mean, 0.09, 8.8e-13
-Bind, SpreadindAndClosing , mean, 0.09, 8.8e-13
-Bind, Jump , mean square, 0.09, 3.6e-12
-Condense+Enclose, Position of SpineBase_Y , max, 0.07, 7.6e-07
-Condense+Enclose, Directness  , mean square, 0.07, 4.5e-13
-Condense+Enclose, Directness  , mean abs, 0.07, 2.5e-12
-Condense+Enclose, Position of SpineBase_Yafter LPF  , max, 0.07, 1.0e-05
-Condense+Enclose, RiseAndSink , max, 0.06, 0.03502
-Direct, Position of Head_Z , mean, 0.04, 0.02546
-Direct, Position of Head_Zafter LPF  , mean, 0.04, 0.06516
-Direct, RiseAndSink , max abs, 0.04, 0.07142
-Direct, RiseAndSink , max, 0.05, 0.02056
-Direct, Position of WristLeft_Yafter LPF  , max, 0.05, 9.1e-08
-Free+Light, Position of SpineBase_Y , max, 0.13, 3.3e-11
-Free+Light, Position of ElbowLeft_Yafter LPF  , max, 0.14, 7.8e-28
-Free+Light, Position of ElbowLeft_Y , max, 0.14, 8.8e-26
-Free+Light, Position of ElbowLeft_X , max abs, 0.13, 1.5e-21
-Free+Light, RiseAndSink , max, 0.13, 1.3e-07
-HeadDrop, Position of FootLeft_X velocity , max, 0.1, 7.1e-12
-HeadDrop, Position of Head_Z , mean, 0.13, 1.0e-24
-HeadDrop, Position of Head_Zafter LPF  , mean, 0.12, 3.4e-23
-HeadDrop, Position of FootLeft_X , std, 0.12, 4.8e-15
-HeadDrop, Position of FootRight_Xafter LPF  , std, 0.1, 8.2e-13
-Jump, Position of SpineBase_Y , max, 0.26, 2.4e-56
-Jump, Position of SpineBase_Yafter LPF  , max, 0.16, 2.2e-23
-Jump, RiseAndSink , max abs, 0.13, 7.9e-13
-Jump, Position of ShoulderLeft_Y jurk , std, 0.11, 3.2e-17
-Jump, RiseAndSink , max, 0.13, 5.4e-09
-Passive, Position of ElbowLeft_X , mean square, 0.09, 6.6e-10
-Passive, Position of FootLeft_X , std, 0.1, 1.0e-12
-Passive, Position of ElbowLeft_X , max abs, 0.09, 6.9e-16
-Passive, ElbowLeft angle  velocity , mean abs, 0.09, 8.4e-11
-Passive, Position of ElbowRight_Z , max, 0.1, 4.4e-14
-Retreat, Jump , mean, 0.07, 5.9e-11
-Retreat, SpreadindAndClosing , mean, 0.07, 5.9e-11
-Retreat, Position of HandRight_Yafter LPF  , max, 0.07, 3.1e-08
-Retreat, Position of ElbowRight_Y velocity , mean square, 0.07, 3.4e-07
-Retreat, AdvanceAndRetreate , max, 0.07, 5.5e-05
-Rhythmicity, Position of SpineBase_Y , max, 0.15, 1.7e-13
-Rhythmicity, Position of SpineBase_Yafter LPF  , max, 0.12, 6.9e-11
-Rhythmicity, RiseAndSink , max abs, 0.1, 5.8e-07
-Rhythmicity, Position of ElbowLeft_X , max abs, 0.12, 7.3e-17
-Rhythmicity, RiseAndSink , max, 0.1, 1.8e-06
-Rotation, Position of SpineBase_Y , max, 0.13, 1.7e-20
-Rotation, ElbowLeft angle  acceleration , mean square, 0.12, 3.7e-32
-Rotation, Position of ElbowRight_Z , max, 0.14, 4.8e-27
-Rotation, Position of ElbowRight_Z velocity , std, 0.14, 2.8e-30
-Rotation, Position of ShoulderLeft_Z acceleration , mean square, 0.18, 2.2e-42
-Sink, Position of SpineBase_Y , max, 0.09, 8.7e-06
-Sink, Position of ElbowLeft_X , mean square, 0.08, 2.4e-10
-Sink, Position of ElbowLeft_X velocity , mean square, 0.08, 9.6e-07
-Sink, Position of ElbowLeft_X , max abs, 0.08, 8.4e-16
-Sink, Position of ElbowRight_Z , max, 0.08, 3.8e-12
-Spread, Position of HandTipLeft_X velocity , std, 0.14, 5.9e-33
-Spread, Position of HandTipLeft_X velocity , mean square, 0.14, 5.9e-34
-Spread, Position of HandTipLeft_X velocity , mean abs, 0.14, 2.2e-33
-Spread, Position of ElbowLeft_X , mean square, 0.21, 6.2e-48
-Spread, Position of ElbowLeft_X , max abs, 0.18, 2.0e-29
-Strong, Position of Head_Z , mean, 0.08, 2.9e-09
-Strong, Position of Head_Zafter LPF  , mean, 0.08, 1.2e-09
-Strong, Position of HandRight_Yafter LPF  , max, 0.05, 0.08831
-Strong, Position of ElbowRight_Z , max, 0.04, 0.03861
-Strong, RiseAndSink , max, 0.04, 0.15546
-Sudden, Position of Neck_Z , max, 0.04, 2.4e-06
-Sudden, Position of SpineShoulder_Z , max, 0.05, 3.0e-06
-Sudden, Position of Head_Z , mean, 0.06, 4.2e-05
-Sudden, Position of Head_Zafter LPF  , mean, 0.06, 2.2e-05
-Sudden, Position of SpineMid_Z , max, 0.05, 3.4e-06
-Twist+Back, Position of SpineBase_Y , max, 0.08, 1.4e-07
-Twist+Back, Position of FootRight_X , std, 0.08, 7.6e-09
-Twist+Back, Position of FootLeft_X , std, 0.08, 6.4e-09
-Twist+Back, Position of FootRight_Xafter LPF  , std, 0.09, 1.3e-10
-Twist+Back, Position of HipRight_X , std, 0.09, 1.2e-08
-Up+Rise, Position of SpineBase_Y , max, 0.15, 2.9e-28
-Up+Rise, Position of ElbowLeft_Yafter LPF  , max, 0.19, 4.1e-35
-Up+Rise, Position of ElbowLeft_Y , max, 0.18, 7.1e-32
-Up+Rise, RiseAndSink , max abs, 0.15, 4.5e-15
-Up+Rise, RiseAndSink , max, 0.16, 1.6e-11
+Quality, Feature Name, Operator, Information Gain
+Advance, Position of SpineBase_Z , min, 0.09
+Advance, AdvanceAndRetreate , max, 0.08
+Advance, Position of SpineBase_Zafter LPF  , min, 0.08
+Advance, Position of Head_Zafter LPF  , mean, 0.05
+Advance, Position of Head_Z , mean, 0.05
+Advance, RiseAndSink , max, 0.05
+Advance, Position of ElbowRight_Z , max, 0.04
+Advance, RiseAndSink , max abs, 0.04
+Advance, Position of WristLeft_Y , max, 0.04
+Advance, Position of SpineShoulder_Z , max, 0.04
+ArmsToUpperBody, Position of ElbowRight_Z , max, 0.1
+ArmsToUpperBody, Directness of WristRight , mean square, 0.09
+ArmsToUpperBody, HandTipLeft angle after LPF  , mean square, 0.09
+ArmsToUpperBody, Directness of WristRight , mean abs, 0.08
+ArmsToUpperBody, Directness of WristLeft , mean abs, 0.08
+ArmsToUpperBody, Directness of WristLeft , mean square, 0.08
+ArmsToUpperBody, Position of FootLeft_X , std, 0.08
+ArmsToUpperBody, ElbowLeft angle  acceleration , mean square, 0.07
+ArmsToUpperBody, Position of WristLeft_X velocity , skew, 0.07
+ArmsToUpperBody, Position of AnkleLeft_X velocity , max, 0.07
+Bind, SpreadindAndClosing , mean abs, 0.09
+Bind, SpreadindAndClosing , mean, 0.09
+Bind, Jump , mean abs, 0.09
+Bind, Jump , mean, 0.09
+Bind, SpreadindAndClosing , mean square, 0.09
+Bind, Jump , mean square, 0.09
+Bind, Position of SpineBase_Z , min, 0.08
+Bind, Position of ElbowRight_Y velocity , mean square, 0.08
+Bind, Position of ElbowLeft_Yafter LPF  , max, 0.07
+Bind, Position of SpineBase_Y , max, 0.07
+Condense+Enclose, Position of SpineBase_Yafter LPF  , max, 0.07
+Condense+Enclose, Position of SpineBase_Y , max, 0.07
+Condense+Enclose, Directness of WristLeft , mean square, 0.07
+Condense+Enclose, Directness of WristLeft , mean abs, 0.07
+Condense+Enclose, Directness of WristRight , mean abs, 0.06
+Condense+Enclose, Directness of WristRight , mean square, 0.06
+Condense+Enclose, RiseAndSink , max, 0.06
+Condense+Enclose, Position of SpineBase_Zafter LPF  , min, 0.06
+Condense+Enclose, Position of SpineBase_Z , min, 0.05
+Condense+Enclose, Position of ElbowRight_Y velocity , mean square, 0.05
+Direct, RiseAndSink , max, 0.05
+Direct, RiseAndSink , max abs, 0.04
+Direct, Position of Head_Zafter LPF  , mean, 0.04
+Direct, Position of Head_Z , mean, 0.04
+Direct, Position of WristLeft_Y , max, 0.04
+Direct, SpreadindAndClosing , mean abs, 0.04
+Direct, SpreadindAndClosing , mean, 0.04
+Direct, Jump , mean abs, 0.04
+Direct, Jump , mean, 0.04
+Direct, Position of HandRight_Yafter LPF  , max, 0.04
+Free+Light, Position of ElbowLeft_Yafter LPF  , max, 0.15
+Free+Light, Position of ElbowLeft_Y , max, 0.14
+Free+Light, Position of ElbowLeft_X , max abs, 0.13
+Free+Light, Position of SpineBase_Y , max, 0.13
+Free+Light, RiseAndSink , max, 0.13
+Free+Light, Position of SpineBase_Yafter LPF  , max, 0.13
+Free+Light, Position of ElbowLeft_Y , std, 0.13
+Free+Light, RiseAndSink , max abs, 0.13
+Free+Light, Position of ElbowRight_Y , std, 0.12
+Free+Light, Position of ElbowLeft_Yafter LPF  , std, 0.12
+HeadDrop, Position of Head_Z , mean, 0.13
+HeadDrop, Position of Head_Zafter LPF  , mean, 0.12
+HeadDrop, Position of FootLeft_X , std, 0.12
+HeadDrop, Position of FootRight_Xafter LPF  , std, 0.1
+HeadDrop, Position of FootLeft_X velocity , max, 0.1
+HeadDrop, Position of FootLeft_X velocity , max abs, 0.1
+HeadDrop, Position of ElbowRight_Z , max, 0.09
+HeadDrop, Position of FootRight_X , std, 0.09
+HeadDrop, Position of AnkleLeft_X velocity , max, 0.08
+HeadDrop, Position of FootLeft_Z jurk , max abs, 0.08
+Jump, Position of SpineBase_Y , max, 0.26
+Jump, Position of SpineBase_Yafter LPF  , max, 0.16
+Jump, RiseAndSink , max abs, 0.13
+Jump, RiseAndSink , max, 0.13
+Jump, Position of ShoulderLeft_Y jurk , mean abs, 0.13
+Jump, Position of ShoulderLeft_Y jurk , std, 0.11
+Jump, Position of ShoulderRight_Y jurk , mean abs, 0.11
+Jump, Position of ElbowRight_Y velocity , min, 0.1
+Jump, Position of SpineShoulder_Y jurk , mean abs, 0.1
+Jump, Position of Neck_Y jurk , mean abs, 0.1
+Passive, ElbowLeft angle  velocity , mean square, 0.1
+Passive, Position of FootLeft_X , std, 0.1
+Passive, Position of ElbowRight_Z , max, 0.1
+Passive, ElbowLeft angle  velocity , mean abs, 0.09
+Passive, Position of ElbowLeft_X , max abs, 0.09
+Passive, Position of ElbowLeft_X , mean square, 0.09
+Passive, Position of FootRight_Xafter LPF  , std, 0.08
+Passive, KneeRight angle  , max, 0.08
+Passive, KneeRight angle  , max abs, 0.08
+Passive, Position of FootLeft_X , min, 0.08
+Retreat, Position of HandRight_Yafter LPF  , max, 0.07
+Retreat, AdvanceAndRetreate , max, 0.07
+Retreat, Position of ElbowRight_Y velocity , mean square, 0.07
+Retreat, SpreadindAndClosing , mean abs, 0.07
+Retreat, SpreadindAndClosing , mean, 0.07
+Retreat, Jump , mean abs, 0.07
+Retreat, Jump , mean, 0.07
+Retreat, Position of ElbowRight_Y , std, 0.07
+Retreat, SpreadindAndClosing , mean square, 0.06
+Retreat, Jump , mean square, 0.06
+Rhythmicity, Position of SpineBase_Y , max, 0.14
+Rhythmicity, Position of ElbowLeft_X , max abs, 0.12
+Rhythmicity, Position of SpineBase_Yafter LPF  , max, 0.11
+Rhythmicity, RiseAndSink , max, 0.1
+Rhythmicity, RiseAndSink , max abs, 0.1
+Rhythmicity, Position of ElbowRight_Y velocity , min, 0.09
+Rhythmicity, Position of ShoulderLeft_Y jurk , min, 0.09
+Rhythmicity, Position of ShoulderRight_Y acceleration , mean abs, 0.09
+Rhythmicity, Position of ElbowRight_Y acceleration , max, 0.08
+Rhythmicity, Position of ShoulderRight_Y jurk , mean abs, 0.08
+Rotation, Position of ShoulderLeft_Z acceleration , mean square, 0.19
+Rotation, Position of ElbowRight_Z , max, 0.14
+Rotation, Position of SpineBase_Y , max, 0.14
+Rotation, ElbowLeft angle  acceleration , mean square, 0.13
+Rotation, Position of ElbowLeft_X velocity , max, 0.13
+Rotation, Position of HandTipRight_Z velocity , mean abs, 0.13
+Rotation, Position of ElbowLeft_X , max abs, 0.12
+Rotation, Position of WristRight_Z velocity , mean square, 0.12
+Rotation, Position of HandTipRight_Z velocity , std, 0.12
+Rotation, Position of SpineBase_Yafter LPF  , max, 0.12
+Sink, Position of SpineBase_Y , max, 0.09
+Sink, Position of ElbowLeft_X , max abs, 0.08
+Sink, Position of ElbowLeft_X , mean square, 0.08
+Sink, Position of ElbowRight_Z , max, 0.08
+Sink, Position of ElbowLeft_X velocity , mean square, 0.08
+Sink, Position of Head_Z , mean, 0.07
+Sink, ElbowLeft angle  velocity , mean abs, 0.07
+Sink, Position of FootRight_X , std, 0.07
+Sink, KneeRight angle  , max, 0.07
+Sink, KneeRight angle  , max abs, 0.07
+Spread, Position of ElbowLeft_X , mean square, 0.22
+Spread, Position of ElbowLeft_X , max abs, 0.19
+Spread, Position of HandTipLeft_X velocity , mean abs, 0.15
+Spread, Position of HandTipLeft_X velocity , mean square, 0.14
+Spread, Position of HandTipLeft_X velocity , std, 0.14
+Spread, Position of ElbowLeft_Yafter LPF  , max, 0.13
+Spread, SpreadindAndClosing , mean abs, 0.13
+Spread, SpreadindAndClosing , mean, 0.13
+Spread, Jump , mean abs, 0.13
+Spread, Jump , mean, 0.13
+Strong, Position of Head_Z , mean, 0.08
+Strong, Position of Head_Zafter LPF  , mean, 0.08
+Strong, Position of HandRight_Yafter LPF  , max, 0.05
+Strong, Position of ElbowRight_Z , max, 0.04
+Strong, RiseAndSink , max, 0.04
+Strong, SpreadindAndClosing , mean square, 0.04
+Strong, Jump , mean square, 0.04
+Strong, SpreadindAndClosing , mean abs, 0.04
+Strong, SpreadindAndClosing , mean, 0.04
+Strong, Jump , mean abs, 0.04
+Sudden, Position of Head_Zafter LPF  , mean, 0.06
+Sudden, Position of Head_Z , mean, 0.06
+Sudden, Position of SpineMid_Z , max, 0.05
+Sudden, Position of SpineShoulder_Z , max, 0.05
+Sudden, Position of Neck_Z , max, 0.04
+Sudden, RiseAndSink , max, 0.04
+Sudden, KneeRight angle after LPF  , max, 0.04
+Sudden, KneeRight angle after LPF  , max abs, 0.04
+Sudden, Position of FootLeft_X acceleration , max, 0.04
+Sudden, Position of FootRight_X , min, 0.04
+Twist+Back, Position of FootRight_Xafter LPF  , std, 0.09
+Twist+Back, Position of SpineBase_Y , max, 0.08
+Twist+Back, Position of FootRight_X , std, 0.08
+Twist+Back, Position of FootLeft_X , std, 0.08
+Twist+Back, Position of SpineBase_Yafter LPF  , max, 0.08
+Twist+Back, Position of ElbowRight_Y velocity , mean square, 0.07
+Twist+Back, Position of FootRight_X , max abs, 0.07
+Twist+Back, Position of SpineBase_Z , min, 0.06
+Twist+Back, Position of FootLeft_X , max abs, 0.06
+Twist+Back, Position of SpineBase_Zafter LPF  , min, 0.06
+Up+Rise, Position of ElbowLeft_Yafter LPF  , max, 0.19
+Up+Rise, Position of ElbowLeft_Y , max, 0.18
+Up+Rise, RiseAndSink , max, 0.16
+Up+Rise, Position of SpineBase_Y , max, 0.16
+Up+Rise, Position of SpineBase_Yafter LPF  , max, 0.15
+Up+Rise, RiseAndSink , max abs, 0.15
+Up+Rise, Position of HandRight_Yafter LPF  , max, 0.14
+Up+Rise, Position of WristLeft_Y , max, 0.14
+Up+Rise, Position of ElbowLeft_Y , std, 0.14
+Up+Rise, Position of ElbowLeft_Yafter LPF  , std, 0.14

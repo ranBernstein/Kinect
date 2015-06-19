@@ -4,6 +4,7 @@
 \usepackage{url}
 \usepackage[margin=1.1in]{geometry}
 \usepackage{graphicx}
+\usepackage{caption}
 \usepackage{csvsimple}
 \usepackage{varwidth}
 \usepackage{array}
@@ -12,29 +13,60 @@
 \usepackage{pgfplotstable}
 \usepackage{amsmath }
 \usepackage[T1]{fontenc}
-\usepackage[compact]{titlesec}
+\usepackage{titlesec}
 \usepackage{authblk}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{babel}
+%\usepackage[bindingoffset=1.5cm,includeheadfoot,margin=2cm]{geometry}
 
-\author[1]{Bernstein Ran}
-\author[2]{Shafir Tal}
-\author[3]{Tsachor Rachelle}
-\author[4]{Studd Karen}
-\author[1]{Schuster Assaf}
-\affil[1]{Department of Computer Science, Technion I.I.T, Haifa, Israel}
-\affil[2]{The Graduate School of Creative Arts Therapies, University of Haifa}
-\affil[3]{School of Theatre \& Music, The University of Illinois at Chicago}
-\affil[4]{School of Dance, George Mason University}
+%\author[1]{Bernstein Ran}
+%\author[2]{Shafir Tal}
+%\author[3]{Tsachor Rachelle}
+%\author[4]{Studd Karen}
+%\author[1]{Schuster Assaf}
+
+%\affil[1]{Department of Computer Science, Technion I.I.T, Haifa, Israel}
+%\affil[2]{The Graduate School of Creative Arts Therapies, University of Haifa}
+%\affil[3]{School of Theatre \& Music, The University of Illinois at Chicago}
+%\affil[4]{School of Dance, George Mason University}
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \pagestyle{empty}
 
+%\titleformat{\subsection}{\fontsize{10}\textit\selectfont\bfseries}
+%\titleformat*{\subsection}{\normalfont\fontsize{10}{10}\itshape}{\thesubsection}{1em}{}
+\titleformat*{\subsection}{\fontsize{10pt}{10}\itshape\selectfont} 
+\titlespacing*{\subsection} {6pt}{3pt}{0pt}
+\titleformat*{\subsubsection}{\fontsize{10pt}{10}\selectfont} 
+\titlespacing*{\subsubsection} {6pt}{3pt}{0pt}
+%\titlespacing*{\subsection}{0pt}{6pt}{3pt}
+%\titleformat{\subsubsection}{\fontsize{10}}
+%\titlespacing*{\subsubsection}{0pt}{6pt}{3pt}
+
+\pgfplotsset{compat=1.11}
 \begin{document}
 \nocite{*}
 
 \title{Laban Movement Analysis using Kinect}
 
+\author{Ran~Bernstein, Tal~Shafir, Rachelle~Tsachor, Karen~Studd,
+Assaf~Schuster
+\thanks{R. Bernstein and A. Schuster are with the Department of Computer
+Science, Technion I.I.T, Haifa, Israel}
+\thanks{T. Shafir is with the Graduate School of Creative Arts Therapies,
+University of Haifa}
+\thanks{R. Tsachor is with the School of Theatre \& Music, The University of
+Illinois at Chicago}
+\thanks{K. Studd is with the School of Dance, George Mason University}}
+\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
 \maketitle
 \thispagestyle{empty}
+
+
+
 
 
 \begin{abstract}
@@ -58,8 +90,9 @@ Laban Movement Analysis, Kinect, Machine Learning.
 
 \section{Introduction}
 
-\subsection{Laban movement analysis}
-LMA is a formal language for motion description first developed by Rudolf Laban \cite{Laban} and colleagues in the middle of the 20th century. 
+\subsection{Laban Movement Analysis}
+\IEEEPARstart{L}{MA} is a formal language for motion description first
+developed by Rudolf Laban \cite{Laban} and colleagues in the middle of the 20th century.
 LMA describes both conscious and unconscious human movement, based on Laban's categories of \textit{Body}, \textit{Effort}, \textit{Shape}, and \textit{Space}. 
 LMA has been used in the fields of dance, acting, athletics, physical therapy, and psychology and behavioral science.
 LMA helps actors create momentary moods and portray personality traits through
@@ -69,12 +102,13 @@ think specifically about why their character might move in a jerky, fast, light 
 versus a heavy, slow, indirect and uninterrupted manner.
 \begin{figure*}[ht]
 \centering
+\captionsetup{justification=centering}
 \includegraphics[width=\textwidth]{laban.png}
 \caption{Main axes of LMA. Taken from \cite{labanTree}}
 \label{labanTree}
 \end{figure*}
 The entire LMA hierarchy is shown in figure \ref{labanTree}.
-
+\IEEEpubidadjcol
 \subsection{Motivation for Automated LMA}
 There are numerous applications for computerized identification of the qualities that characterize each possible human movement. Examples include the generation and control of specific expressive movements 
 of avatars, virtual characters, or robots in mixed reality scenarios
@@ -140,7 +174,7 @@ whole clip granularity.
 \subsubsection{Primitive Features}
 For every joint in the skeleton the angular velocity, acceleration and jerk were
 extracted, and for each one of them the mean, variance, skew and kurtosis were
-extracted (the extraction of the last four moments is denoted as \phi). 
+extracted (the extraction of the last four moments is denoted as $\phi$). 
 \\\\We denote $\vec{P}_{j}(t)$ as the vector (as we get it from the Kinect) of
 the position of joint $j$ in time $t$ in a clip with $n$ frames, and
 $\alpha_{j}$ is a coefficient proportional to the mass around the joint.
@@ -232,10 +266,10 @@ Every clip is extracted into a vector of 6120 features, most of which are noisy 
 			phase of feature selection.
 			 \begin{figure}[h]
 				\centering
-				\includegraphics[width=60mm]{igFromFclassif.png}
 				\caption{Influence of the number of features selected with IG from the subset
 				of features chosen in the first phase on the performance. The
 				optimal ratio was 60\%.}
+				\includegraphics[width=60mm]{igFromFclassif.png}
 				\label{igFromFclassif}
 			\end{figure}
 			Examples of qualities and their most significant feature are given in 
@@ -248,11 +282,11 @@ Every clip is extracted into a vector of 6120 features, most of which are noisy 
 			entropy of a dataset.
 			 \begin{table*}
 			   \centering
-			   \csvautotabular{rankFeatures.csv}
 			   \caption{Example of several qualities and the feature found to be
 			   the most informative for them. ``Relative position'' stands for the
 			   position of the joint relative to the ancestor joint in the joint
 			   hierarchy.}
+			   \csvautotabular{rankFeatures.csv}
 			   \label{bestFeatures}
 			\end{table*}
 		\item
@@ -310,6 +344,9 @@ InfoGain        0.53 0.045 0.045
 
 \begin{figure}[ht]
 \centering   
+\caption{Evaluation of every CMA's dataset separately in the single task learning
+		setting. Each column represents an additional step in the algorithm's evolution.
+		The results are the average F1 score and its standard deviation (STD) between the CMAs.}
 \begin{tikzpicture}
 \begin{axis} [
     width=5cm,
@@ -324,9 +361,6 @@ InfoGain        0.53 0.045 0.045
   table [y error plus=y-max, y error minus=y-min] {\mytable};
 \end{axis} 
 \end{tikzpicture}
-\caption{Evaluation of every CMA's dataset separately in the single task learning
-		setting. Each column represents an additional step in the algorithm's evolution.
-		The results are the average F1 score and its standard deviation (STD) between the CMAs.}
 \label{oneCMASummary}
 \end{figure}
 

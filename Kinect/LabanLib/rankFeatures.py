@@ -15,22 +15,22 @@ from sklearn.linear_model import MultiTaskLassoCV, \
 from collections import defaultdict
 import pickle
 
-#CMAs = ['Rachelle', 'Milca', 'Sharon', 'Karen','Michal','Tara']
-#ds, featuresNames = labanUtil.accumulatePybrainCMA(CMAs) 
-#X, Y = labanUtil.getXYfromPybrainDS(ds)
-
+CMAs = ['Rachelle', 'Milca', 'Sharon', 'Karen','Michal','Tara']
+ds, featuresNames = labanUtil.accumulatePybrainCMA(CMAs) 
+X, Y = labanUtil.getXYfromPybrainDS(ds)
+"""
 X = pickle.load( open( "X", "r" ) )
 X= np.array(X)
 Y = pickle.load( open( "Y_Laban", "r" ) )
 Y = np.array(Y)
 featuresNames =  pickle.load( open( "featuresNames2", "r" ) )
-    
+""" 
 qualities, combinations = cp.getCombinations()
 
 
 features = open('mixedFeatures.csv', 'w')
 features.flush()
-features.write('Quality, Feature Name, Operator, Information Gain, p-value\n')
+features.write('Quality, Feature Name, Operator, Information Gain\n')
 
 selectedFeaureNum=100
 accum = np.zeros((X.shape[1],))
@@ -44,16 +44,26 @@ def transform(X):
 X_filtered = transform(X)
 featuresNames = [featuresNames[i] for i in selectedIndices]
 
-selector = SelectKBest(ig.infoGain, 5)
+selector = SelectKBest(ig.infoGain, 10)
 for q, y in zip(qualities, np.transpose(Y)):
     selector = selector.fit(X_filtered, y)
     featureNums = np.where(selector.get_support() == True)[0]
     #featureNum = selector.get_support().tolist().index(True)
+    
+    scores = selector.scores_[featureNums]
+    order = np.argsort(scores)[::-1]
+    orderedFeatureNums = featureNums[order]
+    print "scores"
     print featureNums
-    for featureNum in featureNums:
+    print scores
+    print order
+    print orderedFeatureNums
+    print selector.scores_[orderedFeatureNums]
+    
+    for featureNum in orderedFeatureNums:
         pstr = str(selector.pvalues_[featureNum])
         pstr = pstr[:3] + pstr[-4:]
         scoreStr = str(round(selector.scores_[featureNum],2))
-        features.write(q+', '+ featuresNames[featureNum]+', '+scoreStr+', ' +pstr+ '\n')
+        features.write(q+', '+ featuresNames[featureNum]+', '+scoreStr+'\n')
 features.close()
     

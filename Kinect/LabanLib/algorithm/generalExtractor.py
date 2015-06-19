@@ -155,7 +155,7 @@ def getFeatureVec(fileName, chopFactor, firstRun=False, joints=None):
             res = np.dot(first, second)
             dircetness.append(res)
             dircetnessTime.append(time[j])
-        v, f = analyzeData(dircetnessTime, dircetness, 'Directness ')
+        v, f = analyzeData(dircetnessTime, dircetness, 'Directness of '+jointsHeaders[4*i][:-2])
         vec+=v
         featuresNames+=f
     extractor = aa.getExtractor(fileName)

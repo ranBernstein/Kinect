@@ -27,6 +27,10 @@ def analyze(inputFile):
         indexLeft = headers.index('AnkleLeft_Y')
         jumpsLeft.append(lineInFloats[indexLeft])
         jumpsRight.append(lineInFloats[indexRight])
+    mins = [np.min(l,r) for l,r in zip(jumpsLeft, jumpsRight)]
+    return np.max(mins) - np.min(mins)
+    """
     jumpsLeft = np.abs(np.diff(jumpsLeft))
     jumpsRight = np.abs(np.diff(jumpsRight))
     return [np.mean([l, r] for l, r in zip(jumpsLeft, jumpsRight))]
+    """

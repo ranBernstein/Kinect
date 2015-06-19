@@ -12,8 +12,8 @@ CMAs = ['Rachelle', 'Milca', 'Sharon', 'Karen','Michal','Tara']
 
 
 
-"""
 X,Y_Laban, featuresNames = labanUtil.accumulateCMA(CMAs, labanUtil.getMultiClassDataset) 
+"""
 fy = open('X', 'w')
 fy.flush()
 pickle.dump(X, fy)
