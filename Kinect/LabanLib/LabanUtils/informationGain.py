@@ -91,6 +91,35 @@ def getEntropy(D):
         Ent+=countVals[idx]*1.0/length*np.log2(length*1.0/countVals[idx])
     return Ent
 
+def getSplitValueAndClass(X,y,f):
+    EntWithoutSplit=getEntropy(y)
+    feature=X[:,f]
+    length=len(feature)
+    valueList=list(set(feature))
+    splits=np.diff(valueList)/2.0+valueList[:-1]
+    maxGain=0
+    bestSplit=0
+    bestPart1=[]
+    bestPart2=[]
+    for split in splits:
+        Part1idx=np.argwhere(feature<=split)
+        Part2idx=np.argwhere(feature>split)
+        E1=getEntropy(y[Part1idx[:,0]])
+        l1=len(Part1idx)
+        E2=getEntropy(y[Part2idx[:,0]])
+        l2=len(Part2idx)
+        Gain=EntWithoutSplit-(l1*1.0/length*E1+l2*1.0/length*E2)
+        if Gain > maxGain:
+            maxGain=Gain
+            bestSplit=split
+            bestPart1=Part1idx
+            bestPart2=Part2idx
+    small0 = len(np.where(y[bestPart1[:,0]]==0)[0])
+    small1 = len(np.where(y[bestPart1[:,0]]==1)[0])
+    big0 = len(np.where(y[bestPart2[:,0]]==0)[0])
+    big1 = len(np.where(y[bestPart2[:,0]]==1)[0])
+    return bestSplit,small0,small1,big0,big1
+
 def featureInfoGain(X,y,feat):
     """ 
     Calculate maximum information gain w.r.t. the feature which is specified in column feat of the 2-dimensional array X.

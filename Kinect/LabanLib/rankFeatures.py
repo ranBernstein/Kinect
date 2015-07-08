@@ -16,8 +16,11 @@ from collections import defaultdict
 import pickle
 
 CMAs = ['Rachelle', 'Milca', 'Sharon', 'Karen','Michal','Tara']
+#CMAs = ['Milca']
 ds, featuresNames = labanUtil.accumulatePybrainCMA(CMAs) 
 X, Y = labanUtil.getXYfromPybrainDS(ds)
+#pickle.dump(X, open('X'))
+#pickle.dump(Y, open('Y'))
 """
 X = pickle.load( open( "X", "r" ) )
 X= np.array(X)
@@ -30,7 +33,8 @@ qualities, combinations = cp.getCombinations()
 
 features = open('mixedFeatures.csv', 'w')
 features.flush()
-features.write('Quality, Feature Name, Operator, Information Gain\n')
+features.write('Quality, Feature Name, Operator, \
+    Information Gain, Split value, Small0, Small1, Big0, Big1\n')
 
 selectedFeaureNum=100
 accum = np.zeros((X.shape[1],))
@@ -64,6 +68,10 @@ for q, y in zip(qualities, np.transpose(Y)):
         pstr = str(selector.pvalues_[featureNum])
         pstr = pstr[:3] + pstr[-4:]
         scoreStr = str(round(selector.scores_[featureNum],2))
-        features.write(q+', '+ featuresNames[featureNum]+', '+scoreStr+'\n')
+        bestSplit,small0,small1,big0,big1 = \
+            ig.getSplitValueAndClass(X_filtered,y,featureNum)
+        features.write(q+', '+ featuresNames[featureNum]+', '+scoreStr \
+            +', '+str(bestSplit)+', '+str(small0)+', '+str(small1) \
+            +', '+str(big0)+', '+str(big1)  +'\n')
 features.close()
     
