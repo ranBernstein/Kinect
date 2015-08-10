@@ -86,7 +86,8 @@ output of Microsoft's Kinect V2 sensor and on video. A sample of these clips
 were tagged by 2 Certified Movement Analysts as a multi-label training set to 
 develop the Machine Learning (ML) algorithms.  
 This approach obtained an improvement in recall and precision rate of about 
-60\%--- 4\% more than single-task machine learning previous approach by Bertstein et al. 
+60\%--- 4\% more than single-task machine learning previous approach by
+Bernstein et al.
 on single-task learning,  was validated by analysis of non trained people moving general actions.   
 Results show improved handling of noisy sensory data with an in-home setup, 
 a method for automatic recognition of markerless movement in different situations, 
@@ -217,7 +218,16 @@ These clips are also about 3 seconds long, and each individual was asked to perf
 of several every day tasks.
 \end{itemize}
 \subsection{Clip Labeling}
-To achieve a ground truth labeling for the two datasets, a sample of the first data set clips was tagged by a committee of 2 CMAs (two of the 6 CMAs who performed in the clips) who determined which Laban qualities appear in the clip. The use of a committee decision instead of the subjective opinion of one CMA decreases the labeling noise and the decision is considered as ground truth. The consensus method that the committee used is was: Both of the CMAs watched observed each sample clip without knowing the clip's intended features, named the primary elements observed in the clip independently, then the clip was labeled by the intersection of the two sets where we both agreed. 
+To achieve a ground truth labeling for the two datasets, 
+a sample of the first data set clips was tagged by a committee of 2 CMAs 
+(two of the 6 CMAs who performed in the clips) who determined 
+which Laban qualities appear in the clip. The use of a committee 
+decision instead of the subjective opinion of one CMA decreases 
+the labeling noise and the decision is considered as ground truth. 
+The consensus method that the committee used was: Both of the CMAs 
+observed each sample clip without knowing the clip's intended features, 
+named the primary elements observed in the clip independently, 
+then the clip was labeled by the intersection of the two sets where both agreed. 
 \subsection{Feature Extraction}
 The feature extraction is adopted from an earlier work \cite{ran}.
 Due to the unequal length of clips, all the extracted features are in whole clip 
@@ -560,10 +570,10 @@ a future development of these methods might combine each as a filter to boost ac
 
 The improvement of the F1 score from a single task learning setting (0.56) to a multitask setting (0.6) demonstrates the synergy of a shared model for several correlated tasks. 
 The method works better on qualities that appear with larger changes in \textit{Space} that supports their recognition. 
-Although this fact indicates that there still much more to be done to achieve a
+Although this fact indicates that there much more to be done to achieve a
 deep capture of all the qualities, the MTL approach might facilitate the ML to
-take advantage of LMA theories of the affinity of Space, Shape, Effort and body
-to mine the data for new discoveries about the kinematic features of effort.
+take advantage of LMA theories of the affinity of Space, Shape, Effort and Body
+to mine the data for new discoveries about the kinematic features of Effort.
 The high performance on free and light demonstrated that this method can identify some Efforts and shows potential that with further refinement it maybe valuable for recognition of the other Efforts. 
 We defined  three challenges in the introduction: the first, quantifying the subtle qualities --- 
 the MTL approach produced modest improvement in that area.
