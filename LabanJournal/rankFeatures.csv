@@ -1,0 +1,7 @@
+Quality,Feature Description,Information Gain
+Jump,Vertical relative (to the starting point) position of center of mass,0.28
+Spread,Horizontal relative position of left elbow,0.25
+Rotation,Left  shoulder horizontal acceleration,0.21
+Up+Rise,Vertical relative position of left elbow,0.2
+Free+Light,Left elbow angle's variability,0.16
+Rhythmicity,Vertical relative position of center of mass,0.16

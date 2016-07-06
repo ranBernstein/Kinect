@@ -2,8 +2,8 @@ from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.utilities import percentError
 import numpy as np
 import matplotlib.pyplot as plt
-import LabanUtils.util as labanUtil
-import LabanUtils.combinationsParser as cp
+import LabanLib.LabanUtils.util as labanUtil
+import LabanLib.LabanUtils.combinationsParser as cp
 from pybrain.structure import FeedForwardNetwork
 import matplotlib.pyplot as plt
 from sklearn.svm import LinearSVC
@@ -90,7 +90,7 @@ if __name__ == '__main__':
     qualities, combinations = cp.getCombinations()
     pool = Pool(6)  
     source = 'Rachelle' 
-    ds = labanUtil.getPybrainDataSet(source)
+    ds, featuresNames  = labanUtil.getPybrainDataSet(source)
     #print 'input diamention: ', len(ds.getSample(0)[0])
     inLayerSize = len(ds.getSample(0)[0])
     outLayerSize = len(ds.getSample(0)[1])

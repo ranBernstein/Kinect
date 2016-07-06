@@ -23,7 +23,7 @@ def getPybrainDataSet(source):
     for emotion in emotions:
         for typeNum in range(1,30):
             for take in range(1,10):
-                fileName = 'recordings/'+source+'/'+emotion+'/'+\
+                fileName = '../recordings/'+source+'/'+emotion+'/'+\
                 str(typeNum)+'_'+str(take)+'.skl'
                 try:
                     data, featuresNames = ge.getFeatureVec(fileName, first)
